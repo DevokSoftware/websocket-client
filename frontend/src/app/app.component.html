@@ -1,0 +1,21 @@
+<h1>
+  WebSockets
+</h1>
+<br>
+<div>
+  <div class="column">
+    <textarea [(ngModel)]="content" name="contentInput" cols="40" rows="5"></textarea>
+    <br>
+    <button (click)="sendMsg()">Send Message</button>
+  </div>
+
+</div>
+<br>
+<br>
+<div>
+  <h1>Chat:</h1>
+  <br>
+  <ul>
+    <li *ngFor="let item of received"><b>{{item.username}}:</b>{{item.message}}</li>
+  </ul>
+</div>

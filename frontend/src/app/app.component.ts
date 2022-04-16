@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as moment from 'moment';
 import { WebsocketService } from './service/websocket-service';
 
 @Component({
@@ -15,6 +16,7 @@ export class AppComponent {
   constructor(private WebsocketService: WebsocketService) {
     WebsocketService.messages.subscribe(msg => {
       this.received.push(msg);
+      msg.timestamp = moment.unix(Number(msg.timestamp)).format("HH:mm")
       console.log("Response from websocket: " + msg);
     });
   }
@@ -22,10 +24,11 @@ export class AppComponent {
   sendMsg() {
     let message = {
       username: '',
-      message: ''
+      message: '',
+      timestamp: ''
     };
-    message.username = 'localhost';
     message.message = this.content;
+    this.content = '';
 
     this.sent.push(message);
     this.WebsocketService.messages.next(message);

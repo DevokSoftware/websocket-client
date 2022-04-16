@@ -14,7 +14,8 @@ public class MessageEncoder implements Encoder.Text<Message> {
 
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("username", message.getUsername())
-                .add("message", message.getMessage()).build();
+                .add("message", message.getMessage())
+                .add("timestamp", message.getTimestamp()).build();
         return jsonObject.toString();
 
     }

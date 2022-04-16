@@ -10,6 +10,7 @@ const CHAT_URL = "ws://localhost:8080/websocket-client/message/";
 export interface Message {
     username: string;
     message: string;
+    timestamp: string;
 }
 
 @Injectable()
@@ -19,7 +20,7 @@ export class WebsocketService {
     user: string;
 
     constructor() {
-        this.user = "User_" + Math.floor(Math.random() * 1000);
+        this.user = "user" + Math.floor(Math.random() * 1000);
         let url = CHAT_URL + this.user;
         this.messages = <Subject<Message>>this.connect(url).pipe(
             map(

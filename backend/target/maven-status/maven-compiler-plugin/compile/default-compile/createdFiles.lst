@@ -1,6 +1,0 @@
-com\devok\websocket\resources\service\ChatSessionController.class
-com\devok\websocket\resources\model\Message.class
-com\devok\websocket\resources\encoders\MessageEncoder.class
-com\devok\websocket\resources\encoders\MessageDecoder.class
-com\devok\websocket\RestApplication.class
-com\devok\websocket\resources\MessageServer.class

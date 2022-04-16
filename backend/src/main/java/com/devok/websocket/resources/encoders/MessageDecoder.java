@@ -17,6 +17,7 @@ public class MessageDecoder implements Decoder.Text<Message> {
         Message message = new Message();
         message.setUsername(jsonObject.getString("username"));
         message.setMessage(jsonObject.getString("message"));
+        message.setTimestamp(jsonObject.getString("timestamp"));
         return message;
 
     }

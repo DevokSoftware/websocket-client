@@ -11,6 +11,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -39,6 +40,7 @@ public class MessageServer {
         System.out.println("Received Message");
         Map<String, String> chatUsers = chatSessionController.getUsers();
         message.setUsername(chatUsers.get(session.getId()));
+        message.setTimestamp(String.valueOf(Instant.now().getEpochSecond()));
         broadcast(message);
     }
 

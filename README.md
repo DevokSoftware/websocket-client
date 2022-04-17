@@ -1,7 +1,7 @@
 # Websocket Chat
 
 ## Description
-Project splitted in two applications: 
+Project splitted into two applications: 
 * a backend app using Java EE to handle websocket sessions and receive/send messages throughout the open sessions.
 * a frontend app in Angular with a chat window that allows an user to send messages to another users. 
 
